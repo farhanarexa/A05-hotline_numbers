@@ -55,5 +55,22 @@ callButtons.forEach(function (button) {
         let serviceName = card.querySelector("h3").innerText;
         let numberText = card.querySelector(".serviceNumber").innerText;
         alert("Calling " + serviceName + " - " + numberText);
+
+
+        document.getElementById("callHistoryList").innerHTML += `
+        <li class="bg-gray-50 rounded-lg p-3 border border-gray-100">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-medium text-gray-800">${serviceName}</p>
+                            <p class="text-xs text-gray-500">${numberText}</p>
+                        </div>
+                        <span class="text-xs text-gray-500">${new Date().toLocaleTimeString()}</span>
+                    </div>
+                </li>` 
+
+
+
+
+
     });
 });
