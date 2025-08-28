@@ -1,3 +1,6 @@
+let copyButtons = document.querySelectorAll(".copy-button"); // Get all copy buttons
+let callButtons = document.querySelectorAll(".call-button"); // Get all call buttons
+
 // heart count
 function heartCount() {
     let counterElement = document.getElementById("heartCounter");
@@ -7,8 +10,20 @@ function heartCount() {
 }
 
 
-// Get all copy buttons
-let copyButtons = document.querySelectorAll(".copy-button");
+// copy count
+copyButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        let counterElement = document.getElementById("copyCounter");
+        let currentCount = parseInt(counterElement.innerHTML);
+        let newCount = currentCount + 1;
+        counterElement.innerHTML = newCount;
+
+
+    });
+});
+
+
+// copy alert
 copyButtons.forEach(function (button) {
     button.addEventListener("click", function () {
         let card = button.closest(".bg-white");
@@ -20,8 +35,8 @@ copyButtons.forEach(function (button) {
     });
 });
 
-// Get all call buttons
-let callButtons = document.querySelectorAll(".call-button");
+
+// call alert
 callButtons.forEach(function (button) {
     button.addEventListener("click", function () {
 
