@@ -20,3 +20,13 @@ copyButtons.forEach(function (button) {
     });
 });
 
+// Get all call buttons
+let callButtons = document.querySelectorAll(".call-button"); // selecting the green call buttons
+callButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        let card = button.closest(".bg-white"); // find the parent card
+        let serviceName = card.querySelector("h3").innerText; // get the service name
+        let numberText = card.querySelector(".serviceNumber").innerText; // get the number
+        alert("Calling " + serviceName + " - " + numberText);
+    });
+});
