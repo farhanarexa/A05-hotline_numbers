@@ -21,12 +21,24 @@ copyButtons.forEach(function (button) {
 });
 
 // Get all call buttons
-let callButtons = document.querySelectorAll(".call-button"); // selecting the green call buttons
+let callButtons = document.querySelectorAll(".call-button");
 callButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-        let card = button.closest(".bg-white"); // find the parent card
-        let serviceName = card.querySelector("h3").innerText; // get the service name
-        let numberText = card.querySelector(".serviceNumber").innerText; // get the number
+
+        // checking if the user has enough coins
+        let coinCounter = document.getElementById("coinCounter").innerHTML;
+        let coinCount = parseInt(coinCounter);
+        if (coinCount < 20) {
+            alert("You don't have enough coins");
+            return;
+        }
+        coinCount -= 20;
+        document.getElementById("coinCounter").innerHTML = coinCount;
+
+        // successful call alert
+        let card = button.closest(".bg-white");
+        let serviceName = card.querySelector("h3").innerText;
+        let numberText = card.querySelector(".serviceNumber").innerText;
         alert("Calling " + serviceName + " - " + numberText);
     });
 });
