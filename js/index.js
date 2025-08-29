@@ -45,7 +45,7 @@ callButtons.forEach(function (button) {
         let coinCounter = document.getElementById("coinCounter").innerHTML;
         let coinCount = parseInt(coinCounter);
         if (coinCount < 20) {
-            alert("You need at least 20 coins to make a call!");
+            alert("Insufficient coins. You need at least 20 coins to make a call...");
             return;
         }
         coinCount -= 20;
