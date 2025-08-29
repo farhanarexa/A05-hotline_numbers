@@ -13,23 +13,35 @@
 
 <body>
     <!-- Header Section -->
-    <header class="bg-gray-200 p-4 flex justify-between items-center">
+    <header class="bg-gray-200 p-4 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+        <!-- Left Side Logo -->
         <div class="flex items-center">
-            <img src="images/logo.png" alt="" class="h-10">
-            <p class="ml-2 text-xl font-bold" style="color: #006747; font-weight: 900;">Emergency <br> Service</p>
+            <img src="images/logo.png" alt="" class="h-10 w-auto">
+            <p class="ml-2 text-lg sm:text-xl font-bold text-[#006747] leading-tight">
+                Emergency <br class="hidden sm:block"> Service
+            </p>
         </div>
-        <div class="flex flex-row gap-4 items-center">
-            <div class="flex flex-row gap-2 items-center bg-[#41FF6B]/10 px-5 py-2 rounded-3xl">
+
+        <!-- Right Side Counters & Button -->
+        <div class="flex flex-wrap justify-center md:justify-end gap-3 items-center">
+
+            <!-- Heart Counter -->
+            <div class="flex flex-row gap-2 items-center bg-[#41FF6B]/10 px-4 py-2 rounded-3xl">
                 <p class="text-sm font-bold" id="heartCounter">0</p>
-                <img src="images/heart.png" alt="" class="nav-img h-6">
+                <img src="images/heart.png" alt="" class="nav-img h-6 w-auto">
             </div>
-            <div class="flex flex-row gap-2 items-center bg-[#41FF6B]/10 px-5 py-2 rounded-3xl">
+
+            <!-- Coin Counter -->
+            <div class="flex flex-row gap-2 items-center bg-[#41FF6B]/10 px-4 py-2 rounded-3xl">
                 <p class="text-sm font-bold" id="coinCounter">100</p>
-                <img src="images/coin.png" alt="" class="h-6">
+                <img src="images/coin.png" alt="" class="h-6 w-auto">
             </div>
-            <div class="flex flex-row gap-2 items-center ">
-                <button class="bg-green-500 text-white rounded-3xl px-6 py-2"><span id="copyCounter">0</span>
-                    Copy</button>
+
+            <!-- Copy Button -->
+            <div class="flex flex-row gap-2 items-center">
+                <button class="bg-green-500 text-white rounded-3xl px-5 py-2 text-sm sm:text-base">
+                    <span id="copyCounter">0</span> Copy
+                </button>
             </div>
         </div>
     </header>
@@ -45,9 +57,6 @@
             People's Republic of Bangladesh
         </p>
     </main>
-
-
-
 
     <!-- Services Section -->
     <section class="p-4 bg-green-50">
